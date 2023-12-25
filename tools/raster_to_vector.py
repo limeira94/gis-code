@@ -5,8 +5,6 @@ import geopandas as gpd
 from shapely.geometry import shape
 
 
-
-
 def raster_to_shape_gdal(raster_file, vector_file):
     raster = gdal.Open(raster_file)
     band = raster.GetRasterBand(1)
@@ -47,11 +45,11 @@ def raster_to_shape_rasterio(raster_file, vector_file):
 
         
         
-def main():    
-    raster_file = 'data/rasterteste.tif'
-    vector_file = 'results/rasterteste2.shp'
-    raster_to_shape_rasterio(raster_file, vector_file)
+# def main():    
+#     raster_file = '/data/rasterteste.tif'
+#     vector_file = 'results/rasterteste2.shp'
+#     raster_to_shape_rasterio(raster_file, vector_file)
 
 
-if __name__ == '__main__':
-    main()    
+# if __name__ == '__main__':
+#     main()    

@@ -2,3 +2,5 @@
 .env
 venv/
 env
+tests/__pycache__
+tools/__pycache__
