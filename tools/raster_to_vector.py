@@ -3,6 +3,7 @@ import rasterio
 from rasterio.features import shapes
 import geopandas as gpd
 from shapely.geometry import shape
+from utils.measure_time import measuare_execution_time 
 
 
 def raster_to_shape_gdal(raster_file, vector_file):
@@ -45,11 +46,18 @@ def raster_to_shape_rasterio(raster_file, vector_file):
 
         
         
-# def main():    
-#     raster_file = '/data/rasterteste.tif'
-#     vector_file = 'results/rasterteste2.shp'
-#     raster_to_shape_rasterio(raster_file, vector_file)
+def main():    
+    raster_file = 'data/rasterteste.tif'
+    vector_file = 'results/rasterteste2.shp'
+    
+    measuare_execution_time(raster_to_shape_gdal, raster_file, vector_file)
+    
+    measuare_execution_time(raster_to_shape_rasterio, raster_file, vector_file)
+    # raster_to_shape_rasterio(raster_file, vector_file)
 
+    # raster_to_shape_gdal(raster_file, vector_file)
 
-# if __name__ == '__main__':
-#     main()    
+    
+    
+if __name__ == '__main__':
+    main()    
