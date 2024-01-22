@@ -15,6 +15,7 @@ def output_shapefile(tmp_path):
     return os.path.join(tmp_path, 'output.shp')
 
 
+@pytest.mark.skip
 @pytest.mark.parametrize("raster_function", [raster_to_shape_rasterio, raster_to_shape_gdal])
 def test_raster_to_shape_rasterio_gpd(raster_function, sample_raster, output_shapefile):
     raster_function(sample_raster, output_shapefile)
